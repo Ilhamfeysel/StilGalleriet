@@ -1,5 +1,12 @@
+import Footer from "./components/Footer";
+
 function App() {
-  return <div> stillGalleriet</div>;
+  return (
+    <div>
+      <div>Test</div>
+      <Footer>Test</Footer>
+    </div>
+  );
 }
 
 export default App;
