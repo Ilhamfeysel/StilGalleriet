@@ -1,11 +1,13 @@
 import Footer from "./components/Footer";
+import BootstrapFooter from "./components/BootstrapFooter";
 
 function App() {
   return (
-    <div>
-      <div>Test</div>
-      <Footer>Test</Footer>
-    </div>
+    <>
+      <Footer />
+
+      <BootstrapFooter />
+    </>
   );
 }
 
