@@ -4,10 +4,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import HomePageButtons from "./components/HomePageButtons";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
+      <div>Home</div>
+      <HomePageButtons>Test</HomePageButtons>
+      <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,6 +20,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </div>
   );
 }
 
