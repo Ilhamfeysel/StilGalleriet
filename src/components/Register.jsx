@@ -16,6 +16,6 @@ const Register = () => {
     const user = await axios.get("/users").the;
   };
 
-  return <div>Register</div>;
+  return <div>Register- under development</div>;
 };
 export default Register;
