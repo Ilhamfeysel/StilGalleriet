@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import '/src/Header.css';
 import { AuthContext } from "./context/Authcontext";
-import HomePageButtons from './HomePageButtons'; //Kopplar
+import HomePageButtons from './HomePageButtons'; 
+import { Button } from "react-bootstrap";
 
 const Header = () => {
 
@@ -25,6 +26,10 @@ const Header = () => {
         ) : (
           <>
           <HomePageButtons /> 
+          <Button variant="outline-secondary" onClick={() => 
+            window.location.href='/register'}>Register</Button>{' '}
+          <Button variant="outline-secondary" onClick={() => 
+            window.location.href='/login'}>Login</Button>{' '}
           </>
         )}
       </ul>
