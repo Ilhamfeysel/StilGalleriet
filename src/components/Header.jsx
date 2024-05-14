@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import '/src/Header.css';
 import { AuthContext } from "./context/Authcontext";
+import HomePageButtons from './HomePageButtons'; //Kopplar
 
 const Header = () => {
 
@@ -23,13 +24,8 @@ const Header = () => {
           </>
         ) : (
           <>
-          <Link className="link" to="/register">
-          <li>Register</li>
-        </Link>
-        <Link className="link" to="/login">
-          <li>Login</li>
-        </Link>
-        </>
+          <HomePageButtons /> 
+          </>
         )}
       </ul>
     </header>
