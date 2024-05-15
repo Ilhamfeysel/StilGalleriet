@@ -1,10 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "/src/context/Authcontext";
+
+import { AuthProvider } from "./context/Authcontext";
+
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+//Sätt authprovider ovanför browserrouter
 
 function App() {
   return (
