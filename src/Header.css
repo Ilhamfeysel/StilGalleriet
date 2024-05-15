@@ -1,0 +1,32 @@
+
+.header {
+  background-color: #B2A584;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  padding-top: 20px;
+  padding-left: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title {
+  font-family: 'Girassol';
+  margin-left: 10px; 
+}
+
+.menu {
+  display: flex;
+  gap: 20px; 
+  margin-right: 30px; 
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
