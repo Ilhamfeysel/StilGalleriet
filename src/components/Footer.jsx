@@ -6,36 +6,34 @@ import { Link } from "react-router-dom";
 
 const BootstrapFooter = () => {
   return (
-    <Container fluid style={{ background: "red" }}>
-      <Row
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <Col>
+    <Container fluid style={{ background: "#d9d9d9" }}>
+      <Row class="d-flex flex-row justify-content-around">
+        <Col class="d-flex flex-column ">
           <p>StilGalleriet</p>
           <Link className="about" to="/about">
             About us
           </Link>
+          <a href="">Substainability</a>
+          <a href="">Advertising</a>
         </Col>
-        <Col>
+        <Col class="d-flex flex-column ">
           <p>Discover</p>
+          <a href="">How it works</a>
         </Col>
 
-        <Col>
+        <Col class="d-flex flex-column ">
           <p>Help</p>
+          <a href="">Help center</a>
+          <a href="">Trust & Safety</a>
         </Col>
       </Row>
 
       <Row>
-        {/*You can use style on Bootstrap components*/}
         <Col style={{ textAlign: "center", borderTop: "solid black 1px" }}>
-          {/*You can also use Bootstrap classes*/}
-          {/*Here it sets padding top-bottom(x-axis), Background color as Bootstrap warning and text as white*/}
-          <a class="px-4 bg-warning text-white" href="">
+          <a class="px-4" href="">
             Privacy policy
           </a>
-          <a class="px-4 bg-primary text-black" href="">
+          <a class="px-4 " href="">
             Cookie Policy
           </a>
           <a class="px-4" href="">
