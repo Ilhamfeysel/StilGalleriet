@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Container fluid style={{ background: "#d9d9d9" }}>
+    <Container fluid style={{ background: "#d9d9d9", textAlign: "center" }}>
       <Row
         style={{
           display: "flex",
