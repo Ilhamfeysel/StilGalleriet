@@ -9,28 +9,26 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 
 import HomePageButtons from "./components/HomePageButtons";
-
+import ProductRegister from "./components/ProductRegister";
 
 function App() {
   return (
     <AuthProvider>
-    <BrowserRouter>
-      <div>
-        <Header />
-        <HomePageButtons />  // Moved inside BrowserRouter
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <HomePageButtons /> // Moved inside BrowserRouter
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sell" element={<ProductRegister />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
 
 export default App;
-   
-      
-      
