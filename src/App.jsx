@@ -1,12 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/Authcontext";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+//Sätt authprovider ovanför browserrouter
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -16,6 +19,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 
