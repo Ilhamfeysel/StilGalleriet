@@ -1,15 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { AuthProvider } from "./context/Authcontext";
+
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+
 import HomePageButtons from "./components/HomePageButtons";
-//import NewAd from "./components/NewAd";  ??
-//import SellNow from "./components/SellNow";
+
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <div>
         <Header />
@@ -22,6 +26,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 
