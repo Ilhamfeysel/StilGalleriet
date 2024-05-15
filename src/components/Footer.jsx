@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import { Link } from "react-router-dom";
 
-const BootstrapFooter = () => {
+const Footer = () => {
   return (
     <Container fluid style={{ background: "#d9d9d9" }}>
       <Row class="d-flex flex-row justify-content-around">
@@ -48,4 +48,4 @@ const BootstrapFooter = () => {
   );
 };
 
-export default BootstrapFooter;
+export default Footer;
