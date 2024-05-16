@@ -1,13 +1,33 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "/src/Header.css";
 import { AuthContext } from "../context/Authcontext";
 import HomePageButtons from "./HomePageButtons";
 import { Button } from "react-bootstrap";
 
 const Header = () => {
-  const { state } = useContext(AuthContext);
+  const { state, dispatch } = useContext(AuthContext);
   const isLoggedIn = state.user !== null;
+  const navigate = useNavigate();
+
+
+
+  const handleLogout = () => {
+    dispatch({
+      type: "LOGOUT"
+    });
+
+    window.localStorage.removeItem("user");
+    console.log("User logged out");
+
+    return navigate("/");
+
+  }
+
+
+
+
+
 
   return (
     <header className="header">
@@ -21,22 +41,16 @@ const Header = () => {
             <Link className="link" to="/favorites">
               <li>Favorites</li>
             </Link>
+            <Link className="link" to="/new-ad">
+              <li>New Ad</li>
+            </Link>
+            <Button variant="outline-secondary" onClick={handleLogout}>Log out</Button>
+            
           </>
         ) : (
           <>
             <HomePageButtons />
-            <Button
-              variant="outline-secondary"
-              onClick={() => (window.location.href = "/register")}
-            >
-              Register
-            </Button>{" "}
-            <Button
-              variant="outline-secondary"
-              onClick={() => (window.location.href = "/login")}
-            >
-              Login
-            </Button>{" "}
+        
           </>
         )}
       </ul>

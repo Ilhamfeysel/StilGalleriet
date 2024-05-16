@@ -9,7 +9,7 @@ const initialState = {
 const rootReducer = (state, action) => {
     switch (action. type) {
         case "LOGIN":
-            return {...state, user: action.payload}
+            return {...state, user: action.payload};
             case "LOGOUT":
                 return {...state, user: null};
                 default:
@@ -27,16 +27,23 @@ const AuthProvider = ({children}) => {
     const [state, dispatch] = useReducer(rootReducer, initialState);
 
 
-    useEffect(() => {
-        dispatch({
-            type: "LOGIN",
-            payload: JSON.stringify(window.localStorage.getItem("user"))
-        })
+    useEffect(() => { //har uppdaterat detta 
+        const user = window.localStorage.getItem("user");
+        if (user) {
+            dispatch({
+                type: "LOGIN",
+                payload: JSON.parse(user)
+            });
+        }
+    }, []) //uppdaterat hit
 
-    }, [])
+    const logout = () => {
+        dispatch({ type: "LOGOUT"});
+        window.localStorage.removeItem("user");
+    };
 
     return(
-        <AuthContext.Provider value={{state, dispatch}}>
+        <AuthContext.Provider value={{state, dispatch, logout}}>
             {children}
         </AuthContext.Provider>
     )
