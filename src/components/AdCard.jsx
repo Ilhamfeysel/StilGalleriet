@@ -1,5 +1,4 @@
 import React from "react";
-import resim from "../assets/images/resim.jpg";
 
 export default function AdCard(props) {
   return (
@@ -8,9 +7,9 @@ export default function AdCard(props) {
       <div className="row">
         <div className="col-sm">
           <div className="card">
-            <img src={props.img} className="card-img-top" alt="..." />
+            <img src={props.imgUrl} className="card-img-top" alt="..." />
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">{props.price}</li>
+              <li className="list-group-item">{props.price} </li>
               <li className="list-group-item">{props.size}</li>
               <li className="list-group-item">{props.category}</li>
             </ul>
