@@ -3,7 +3,6 @@ import React from "react";
 export default function AdCard(props) {
   return (
     <div className="container">
-      <h4 className="text-left mb-2">Recently added</h4>
       <div className="row">
         <div className="col-sm">
           <div className="card">

@@ -7,10 +7,14 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5173/api/advertisements"
+        "http://localhost:8080/api/advertisements/all"
       );
-      console.log(response.data); // Process the data returned by the API
-      setProducts(response.data);
+
+      // sista 6 produkt
+      const recentProducts = response.data.slice(-6);
+      setProducts(recentProducts);
+      //console.log(response.data); // Process the data returned by the API
+      // setProducts(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -19,7 +23,7 @@ const Home = () => {
   useEffect(() => {
     fetchData();
     console.log(
-      "axious ile backend e istek atilacak, backend den veriler alinip state guncellenecek setProducts ile guncellenecek" +
+      " aciklamalar: axious ile backend e istek atilacak, backend den veriler alinip state guncellenecek setProducts ile guncellenecek" +
         "state ki veriler for (map) döngusu ile    <AdCard />  componentine props verileri gönderilecek  " +
         "adcard componenti gelen propslari kullanacak"
     );
@@ -27,6 +31,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      <h4 className="text-left mb-2">Recently added</h4>
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-sm-4">
