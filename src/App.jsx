@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <div>
           <Header />
-          <HomePageButtons /> // Moved inside BrowserRouter
+          <HomePageButtons />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
