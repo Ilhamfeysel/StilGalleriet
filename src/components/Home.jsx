@@ -13,8 +13,6 @@ const Home = () => {
       // sista 6 produkt
       const recentProducts = response.data.slice(-6);
       setProducts(recentProducts);
-      //console.log(response.data); // Process the data returned by the API
-      // setProducts(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -30,13 +28,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h4 className="text-left mb-2">Recently added</h4>
+    <div className="container" style={{ marginTop: "50vh" }}>
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-sm-4">
             <AdCard
-              key={index}
               category={product.category}
               imgUrl={product.imgUrl}
               price={product.price}

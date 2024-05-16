@@ -6,7 +6,7 @@ export default function AdCard(props) {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm mb-5">
+        <div className="col-sm mb-3">
           <div className="card">
             <img
               src={props.imgUrl}
