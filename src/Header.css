@@ -31,3 +31,7 @@
   list-style: none;
   gap: 2rem;
 }
+
+.link {
+  color: black;
+}
