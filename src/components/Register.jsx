@@ -12,10 +12,10 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const checkEmail = (users) => {
+  /*const checkEmail = (users) => {
     const user = users.find((user) => user.email === email);
     if (user) return user;
-  };
+  };*/
 
   const {
     state: { user },
@@ -24,6 +24,11 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    dispatch({
+      type: "REGISTER",
+      payload: data,
+    });
   };
 
   return (
@@ -31,7 +36,7 @@ const Register = () => {
       <form onSubmit={handleSubmit} className="register-form">
         <h2>Register</h2>
         <div className="input-field">
-          <label>FirstName</label>
+          <label>FirstName:</label>
           <input
             type="text"
             placeholder="Your First Name?"
@@ -41,7 +46,7 @@ const Register = () => {
         </div>
 
         <div className="input-field">
-          <label>LastName</label>
+          <label>LastName:</label>
           <input
             type="text"
             placeholder="Your Last Name?"
@@ -81,7 +86,6 @@ const Register = () => {
         </div>
 
         <button type="submit" className="signin-button">
-          {" "}
           Sign In
         </button>
       </form>
