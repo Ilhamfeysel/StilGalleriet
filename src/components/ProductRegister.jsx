@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
+
+//Login
+//Connect to backend
+
 const ProductRegister = () => {
   const {
     register,
@@ -11,7 +15,13 @@ const ProductRegister = () => {
 
   const onSubmit = async (data) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/advertisements/add`,
+        {
+          title,
+        }
+      );
+
       throw new Error();
       console.log(data);
     } catch (error) {
@@ -39,11 +49,13 @@ const ProductRegister = () => {
           type="text"
           placeholder="Title"
         />
-        {errors.title && <p className="text-red-500">{errors.title.message}</p>}
+        {errors.title && <p style={{ color: "red" }}>{errors.title.message}</p>}
+
+        {/*
         <label htmlFor="">Description</label>
-        <textarea name="" id=""></textarea>
+        <textarea {...register("description")} name="" id=""></textarea>
         <label htmlFor="">Category</label>
-        <select name="" id="">
+        <select {...register("category")} name="" id="">
           <option value=""></option>
         </select>
         <label htmlFor="">Size</label>
@@ -59,8 +71,10 @@ const ProductRegister = () => {
           <option value=""></option>
         </select>
         <label htmlFor="">Price</label>
-        <input type="text" placeholder="Price" />
-        <button disabled={isSubmitting}>
+        <input {...register("price")} type="text" placeholder="Price" />
+        */}
+
+        <button disabled={isSubmitting} type="submit">
           {isSubmitting ? "Loading..." : "Submit"}
         </button>
       </form>
