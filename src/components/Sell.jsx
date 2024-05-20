@@ -21,7 +21,7 @@ const Sell = () => {
     const name = event.target.name;
     const value = event.target.value;
 
-    console.log("name: " + name, "value: " + value);
+    //console.log("name: " + name, "value: " + value);
 
     setAdvertisement({ ...advertisement, [name]: value });
   };
@@ -38,7 +38,11 @@ const Sell = () => {
         //JSON.parse(window.localStorage.getItem("user")), //Not sure the exact name of item to retrieve
         adTitles: advertisement.adTitles,
         adDescriptions: advertisement.adDescriptions,
-        //adGender: advertisement.adGender,
+        adGender: advertisement.adGender,
+        //adImgUrls: advertisement.adImgUrls,
+        adCategory: advertisement.adCategory,
+        adSize: advertisement.adSize,
+        adColor: advertisement.adColor,
         adPrice: advertisement.adPrice,
       });
 
@@ -69,22 +73,90 @@ const Sell = () => {
             onChange={handleChange}
           />
         </div>
-        {/*
+
         <div>
           <label htmlFor="gender">Gender</label>
           <select
             name="adGender"
             id="adGender"
-            value={adGender}
+            value={advertisement.adGender}
             onChange={handleChange}
           >
             <option value="FEMALE">Female</option>
             <option value="MALE">Male</option>
             <option value="UNISEX">Unisex</option>
           </select>
-          
         </div>
-        */}
+
+        <div>
+          <label htmlFor="category">Category</label>
+          <select
+            name="adCategory"
+            id="adCategory"
+            value={advertisement.adCategory}
+            onChange={handleChange}
+          >
+            <option value="DRESS">Dress</option>
+            <option value="SKIRT">Skirt</option>
+            <option value="SHIRT">Shirt</option>
+            <option value="PANTS">Pants</option>
+            <option value="SWEATER">Sweater</option>
+            <option value="SHORTS">Shorts</option>
+            <option value="COAT">Coat</option>
+            <option value="JACKET">Jacket</option>
+            <option value="SUIT">Suit</option>
+            <option value="JEANS">Jeans</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="image">Image link:</label>
+          <input
+            type="text"
+            name="adImgUrls"
+            value={advertisement.adImgUrls}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="size">Size:</label>
+          <select
+            name="adSize"
+            id="adSize"
+            value={advertisement.adSize}
+            onChange={handleChange}
+          >
+            <option value="XSMALL">XS</option>
+            <option value="SMALL">S</option>
+            <option value="MEDIUM">M</option>
+            <option value="LARGE">L</option>
+            <option value="XLARGE">XL</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="color"></label>
+          <select
+            name="adColor"
+            id="adColor"
+            value={advertisement.adColor}
+            onChange={handleChange}
+          >
+            <option value="BLACK">Black</option>
+            <option value="BLUE">Blue</option>
+            <option value="PINK">Pink</option>
+            <option value="RED">Red</option>
+            <option value="BROWN">Brown</option>
+            <option value="WHITE">White</option>
+            <option value="YELLOW">Yellow</option>
+            <option value="GREEN">Green</option>
+            <option value="ORANGE">Orange</option>
+            <option value="GRAY">Gray</option>
+            <option value="MIX">Mixed</option>
+          </select>
+        </div>
+
         <div>
           <label htmlFor="price">Price:</label>
           <input
