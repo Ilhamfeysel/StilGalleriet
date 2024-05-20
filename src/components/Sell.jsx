@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "/src/login.css";
 //RequestBody need to be sent/returned to backend. Maybe Axios does this.
 //Retrieve userId from localstorage, send required fields
 //Enum
@@ -53,10 +54,18 @@ const Sell = () => {
   };
 
   return (
-    <div className="container">
-      <form action="" className="form">
-        <div>
-          <label htmlFor="title">Title:</label>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f0f0f0",
+      }}
+    >
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2>New advertisement</h2>
+        <div className="input-field">
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             name="adTitles"
@@ -64,17 +73,18 @@ const Sell = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <input
-            type="text"
+        <div className="input-field">
+          <label htmlFor="description">Description</label>
+
+          <textarea
             name="adDescriptions"
+            id="adDescriptions"
             value={advertisement.adDescriptions}
             onChange={handleChange}
           />
         </div>
 
-        <div>
+        <div className="input-field">
           <label htmlFor="gender">Gender</label>
           <select
             name="adGender"
@@ -88,7 +98,7 @@ const Sell = () => {
           </select>
         </div>
 
-        <div>
+        <div className="input-field">
           <label htmlFor="category">Category</label>
           <select
             name="adCategory"
@@ -109,8 +119,8 @@ const Sell = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="image">Image link:</label>
+        <div className="input-field">
+          <label htmlFor="image">Image link</label>
           <input
             type="text"
             name="adImgUrls"
@@ -119,8 +129,8 @@ const Sell = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="size">Size:</label>
+        <div className="input-field">
+          <label htmlFor="size">Size</label>
           <select
             name="adSize"
             id="adSize"
@@ -135,8 +145,8 @@ const Sell = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="color"></label>
+        <div className="input-field">
+          <label htmlFor="color">Color</label>
           <select
             name="adColor"
             id="adColor"
@@ -157,8 +167,8 @@ const Sell = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="price">Price:</label>
+        <div className="input-field">
+          <label htmlFor="price">Price</label>
           <input
             type="text"
             name="adPrice"
