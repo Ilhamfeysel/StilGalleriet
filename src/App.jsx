@@ -9,7 +9,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductPage from "./components/ProductPage"; //la till denna och path product :id längre ner: Dany
 
-import HomePageButtons from "./components/HomePageButtons";
 
 
 function App() {
@@ -17,8 +16,7 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
       <div>
-        <Header />
-        <HomePageButtons />  // Moved inside BrowserRouter
+        <Header /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
