@@ -1,6 +1,7 @@
 import AdCard from "./AdCard";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import HeroImage from "./HeroImage";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -28,7 +29,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container" style={{ marginTop: "50vh" }}>
+    <div className="container">
+      <HeroImage />
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-sm-4">
