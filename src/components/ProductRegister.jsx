@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useContext } from "react";
-import { useForm } from "react-hook-form";
 
 //Login
 //Connect to backend
@@ -56,48 +55,13 @@ const ProductRegister = () => {
       >
         <label htmlFor="">Title</label>
         <input
-          /*  {...register("title", {
-            required: "Title is required",
-            validate: (value) => {
-              if (!value.includes("@")) {
-                return "Must include @";
-              }
-              return true;
-            },
-          })} */
           value={advertisement.title}
           name="title"
           type="text"
           placeholder="Title"
         />
-        {errors.title && <p style={{ color: "red" }}>{errors.title.message}</p>}
 
-        {/*
-        <label htmlFor="">Description</label>
-        <textarea {...register("description")} name="" id=""></textarea>
-        <label htmlFor="">Category</label>
-        <select {...register("category")} name="" id="">
-          <option value=""></option>
-        </select>
-        <label htmlFor="">Size</label>
-        <select name="" id="">
-          <option value=""></option>
-        </select>
-        <label htmlFor="">Color</label>
-        <select name="" id="">
-          <option value=""></option>
-        </select>
-        <label htmlFor="">Gender</label>
-        <select name="" id="">
-          <option value=""></option>
-        </select>
-        <label htmlFor="">Price</label>
-        <input {...register("price")} type="text" placeholder="Price" />
-        */}
-
-        <button disabled={isSubmitting} type="submit">
-          {isSubmitting ? "Loading..." : "Submit"}
-        </button>
+        <button type="submit"></button>
       </form>
     </div>
   );
