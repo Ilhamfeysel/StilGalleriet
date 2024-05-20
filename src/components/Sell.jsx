@@ -30,6 +30,8 @@ const Sell = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    //Check input is not empty
+
     //console.log(JSON.parse(window.localStorage.getItem("user")));
 
     try {
@@ -176,7 +178,7 @@ const Sell = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="login-button" type="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>
