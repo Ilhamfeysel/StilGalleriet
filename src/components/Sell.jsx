@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-//ResponseBody need to be sent/returned to backend
+//RequestBody need to be sent/returned to backend
+//Retrieve userId from localstorage, send required fields
 //Enum
 const Sell = () => {
   const [advertisement, setAdvertisement] = useState({
@@ -28,14 +29,21 @@ const Sell = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    //console.log(JSON.parse(window.localStorage.getItem("user")));
+
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/advertisements/add`, {
+        sellerId: "65fdd10f2f1b477433efc538",
+
+        //JSON.parse(window.localStorage.getItem("user")), //Not sure the exact name of item to retrieve
         adTitles: advertisement.adTitles,
         adDescriptions: advertisement.adDescriptions,
       });
     } catch (error) {
       console.log("Error: " + error);
     }
+
+    console.log("Sent");
   };
 
   return (
