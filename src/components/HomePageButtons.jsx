@@ -11,7 +11,7 @@ const HomePageButtons = () => {
   };
 
   return (
-    <Container fluid style={{ background: "#d9d9d9" }}>
+    <Container fluid style={{ background: "#B2A584" }}>
       <Row style={{ justifyContent: "space-between", paddingTop: "20px", paddingBottom: "20px" }}>
        <Col xs="auto"> 
           <Button variant="outline-secondary" onClick={() => handleNavigation("/register")}>Register</Button>{' '}

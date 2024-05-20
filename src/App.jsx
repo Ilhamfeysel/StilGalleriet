@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
 
-import HomePageButtons from "./components/HomePageButtons";
 
 
 function App() {
@@ -16,8 +15,7 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
       <div>
-        <Header />
-        <HomePageButtons />  // Moved inside BrowserRouter
+        <Header /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
