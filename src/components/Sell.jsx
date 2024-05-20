@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-//RequestBody need to be sent/returned to backend
+//RequestBody need to be sent/returned to backend. Maybe Axios does this.
 //Retrieve userId from localstorage, send required fields
 //Enum
 const Sell = () => {
@@ -38,12 +38,14 @@ const Sell = () => {
         //JSON.parse(window.localStorage.getItem("user")), //Not sure the exact name of item to retrieve
         adTitles: advertisement.adTitles,
         adDescriptions: advertisement.adDescriptions,
+        //adGender: advertisement.adGender,
+        adPrice: advertisement.adPrice,
       });
+
+      console.log("Request sent");
     } catch (error) {
       console.log("Error: " + error);
     }
-
-    console.log("Sent");
   };
 
   return (
@@ -64,6 +66,31 @@ const Sell = () => {
             type="text"
             name="adDescriptions"
             value={advertisement.adDescriptions}
+            onChange={handleChange}
+          />
+        </div>
+        {/*
+        <div>
+          <label htmlFor="gender">Gender</label>
+          <select
+            name="adGender"
+            id="adGender"
+            value={adGender}
+            onChange={handleChange}
+          >
+            <option value="FEMALE">Female</option>
+            <option value="MALE">Male</option>
+            <option value="UNISEX">Unisex</option>
+          </select>
+          
+        </div>
+        */}
+        <div>
+          <label htmlFor="price">Price:</label>
+          <input
+            type="text"
+            name="adPrice"
+            value={advertisement.adPrice}
             onChange={handleChange}
           />
         </div>
