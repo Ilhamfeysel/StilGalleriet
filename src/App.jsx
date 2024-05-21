@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "./context/Authcontext";
-
+import.meta.env
+import UserProfile from "./components/UserProfile";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Routes>
         <Footer />
       </div>
