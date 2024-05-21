@@ -2,28 +2,60 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
+//import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useParams } from "react-router-dom";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const fetchUserData = async () => {
-    try {
-      const response = await axios.get(`http://localhost:8080/api/users/${id}`);
-      setUser(response.data);
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    }
-  };
+  
 
   useEffect(() => {
-    fetchUserData();
-  }, [id]);
+    const fetchUserData = async (e) => {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (!storedUser || !storedUser.token) {
+          throw new Error('No authentication token found');
+        }
+        const token = storedUser.token;
+        const response = await axios.get(
+          `http://localhost:8080/api/users/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+        setUser(response.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+      fetchUserData();
+    }, []);
 
-  if (!user) {
-    return <div>Loading...</div>;
-  }
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>Error: {error}</div>;
+    }
+  
+
+   
+   if (!user) {
+      return <div>No user data found.</div>;
+   }
+  
+
+       
 
   return (
     <div className="container">
@@ -62,3 +94,89 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const fetchData = async () => {
+          try {
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+            if (!storedUser || !storedUser.token) {
+              throw new Error('No authentication token found');
+            }
+            const token = storedUser.token;
+            const response = await axios.get(`http://localhost:8080/api/users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+         setUser(response.data);
+        }catch(error) {
+          console.error( 'Error fetching user data:', error);
+          setError(error.message);
+        } finally {
+          setLoading(false);
+        }
+
+        };
+        useEffect(()=> {
+          fetchData();
+
+        },[id]);
+
+        if (loading) {
+          return <div>Loading...</div>;
+        }
+
+        if (error) {
+          return <div>Error: {error}</div>;
+        }
+      
+
+       
+       if (!user) {
+          return <div>No user data found.</div>;
+        }*/
+
+
+/* //const storedUser = JSON.parse(localStorage.getItem("user"));
+        const user = JSON.parse(window.localStorage.getItem("user"));
+        if (!storedUser || !storedUser.id || !storedUser.token) {
+          console.error('No user or token found in local storage');
+          return;
+        }
+
+        const userId = storedUser.id;
+        const token = storedUser.token;
+
+        const response = await axios.get(`http://localhost:8080/api/users/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        setUser(response.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }*/
