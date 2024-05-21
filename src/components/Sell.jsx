@@ -94,7 +94,11 @@ const Sell = () => {
         background: "#f0f0f0",
       }}
     >
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form
+        className="login-form"
+        onSubmit={handleSubmit}
+        style={{ marginBottom: "1%", marginTop: "1%" }}
+      >
         <h2>New advertisement</h2>
         <div className="input-field">
           <label htmlFor="title">Title</label>
