@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { AuthProvider } from "./context/Authcontext";
+import { AuthProvider } from "./context/AuthContext";
 
 import Home from "./components/Home";
 import Header from "./components/Header";
@@ -22,8 +22,11 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
+
+
       </div>
     </BrowserRouter>
+
     </AuthProvider>
   );
 }
