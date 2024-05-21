@@ -3,6 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useParams, useNavigate } from "react-router-dom";
+import "/src/ProductPage.css"; 
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
@@ -31,31 +32,35 @@ const ProductPage = () => {
 
   return (
     product && (
-      <div className="container">
+      <div className="container product-page-container ">
         <div className="row">
-          <div className="col-sm mb-3">
-            <div className="card">
+          <div className="col-sm mb-3 product-details-container">
+            <div className="card product-image-container">
               <img
                 src={product.imgUrl}
-                className="card-img-top"
+                className="card-img-top product-image"
                 alt="product image"
               />
+              </div>
+              </div>
+              <div className="col-sm-6 mb-3 product-details-container">
+            <div className="card">
               <ul className="list-group list-group-flush">
-                <li className="list-group-item d-flex justify-content-between">
+                <li className="list-group-item d-flex justify-content-between product-price">
                   {product.price}
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{ cursor: "pointer" }}
                   />{" "}
                 </li>
-                <li className="list-group-item">{product.size}</li>
-                <li className="list-group-item">{product.category}</li>
+                <li className="list-group-item product-size">{product.size}</li>
+                <li className="list-group-item product-category">{product.category}</li>
               </ul>
-              <button onClick={handleBuyNow}>Buy Now</button>
+              <button onClick={handleBuyNow} className= "Buy-now-button">Buy Now</button>
             </div>
           </div>
         </div>
-      </div>
+        </div>
     )
   );
 };
