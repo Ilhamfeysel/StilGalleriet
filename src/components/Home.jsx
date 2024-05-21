@@ -1,6 +1,6 @@
-import AdCard from "./AdCard";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AdCard from "./AdCard";
 import HeroImage from "./HeroImage";
 
 const Home = () => {

@@ -16,6 +16,7 @@ export default function AdCard(props) {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    cursor: "pointer",
   };
 
   const imgStyle = {
@@ -28,12 +29,16 @@ export default function AdCard(props) {
     fontSize: "14px",
   };
 
+  const handleImageClick = () => {
+    alert("You clicked the advertisement!");
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm mb-3">
           <div className="card" style={cardStyle}>
-            <div style={imgContainerStyle}>
+            <div style={imgContainerStyle} onClick={handleImageClick}>
               <img src={props.imgUrl} alt="product image" style={imgStyle} />
             </div>
             <ul className="list-group list-group-flush">
