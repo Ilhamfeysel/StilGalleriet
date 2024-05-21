@@ -4,10 +4,10 @@ import { AuthProvider } from "./context/AuthContext";
 
 import Home from "./components/Home";
 import Header from "./components/Header";
+import HomePageButtons from "./components/HomePageButtons";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
 
 import Sell from "./components/Sell";
 
