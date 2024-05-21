@@ -9,7 +9,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 
 import HomePageButtons from "./components/HomePageButtons";
-import ProductRegister from "./components/ProductRegister";
+
 import Sell from "./components/Sell";
 
 function App() {
