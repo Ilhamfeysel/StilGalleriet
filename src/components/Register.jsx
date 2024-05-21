@@ -25,10 +25,33 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch({
-      type: "REGISTER",
-      payload: data,
-    });
+    if (!firstName || !lastName || !email || !username || !password) {
+      alert("Fill in all field for registration!");
+      return;
+    }
+
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/auth/signup`,
+        {
+          firstName,
+          lastName,
+          email,
+          username,
+          password,
+        }
+      );
+      dispatch({
+        type: "REGISTER",
+        payload: data,
+      });
+
+      window.localStorage.setItem("user", JSON.stringify(data));
+      console.log("User registered successfully");
+      return navigate("/");
+    } catch (err) {
+      console.log("Error: " + err);
+    }
   };
 
   return (
@@ -85,8 +108,8 @@ const Register = () => {
           />
         </div>
 
-        <button type="submit" className="signin-button">
-          Sign In
+        <button type="submit" className="signup-button">
+          Sign Up
         </button>
       </form>
     </div>
