@@ -46,9 +46,9 @@ const Register = () => {
         payload: data,
       });
 
-      window.localStorage.setItem("user", JSON.stringify(data));
+      /*window.localStorage.setItem("user", JSON.stringify(data));
       console.log("User registered successfully");
-      return navigate("/");
+      return navigate("/");*/
     } catch (err) {
       console.log("Error: " + err);
     }
