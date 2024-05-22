@@ -15,22 +15,36 @@ const Footer = () => {
         }}
       >
         <Col style={{ display: "flex", flexDirection: "column" }}>
-          <p>StilGalleriet</p>
-          <Link className="about" to="/about">
+          <p style={{ color: "black" }}>StilGalleriet</p>
+          <Link
+            className="about"
+            to="/about"
+            style={{ color: "#555555", textDecoration: "none" }}
+          >
             About us
           </Link>
-          <a href="">Substainability</a>
-          <a href="">Advertising</a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Substainability
+          </a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Advertising
+          </a>
         </Col>
         <Col style={{ display: "flex", flexDirection: "column" }}>
-          <p>Discover</p>
-          <a href="">How it works</a>
+          <p style={{ color: "black" }}>Discover</p>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            How it works
+          </a>
         </Col>
 
         <Col style={{ display: "flex", flexDirection: "column" }}>
-          <p>Help</p>
-          <a href="">Help center</a>
-          <a href="">Trust & Safety</a>
+          <p style={{ color: "black" }}>Help</p>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Help center
+          </a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Trust & Safety
+          </a>
         </Col>
       </Row>
 
@@ -43,10 +57,18 @@ const Footer = () => {
             justifyContent: "space-around",
           }}
         >
-          <a href="">Privacy policy</a>
-          <a href="">Cookie Policy</a>
-          <a href="">Do not sell my Personal Information</a>
-          <a href="">Terms & Conditions</a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Privacy policy
+          </a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Cookie Policy
+          </a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Do not sell my Personal Information
+          </a>
+          <a href="" style={{ color: "#555555", textDecoration: "none" }}>
+            Terms & Conditions
+          </a>
         </Col>
       </Row>
     </Container>
