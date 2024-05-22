@@ -31,7 +31,10 @@ const Login = () => {
         {
           username,
           password
-        })
+        },{
+          withCredentials: true
+         })
+        
     dispatch({
       type: "LOGIN",
       payload: data

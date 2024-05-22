@@ -7,26 +7,24 @@ import { useParams } from "react-router-dom";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
-  const { id } = useParams();
+  //const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  
+  //const userId = "65cb243199ccb2a4d0fc8376";
 
   useEffect(() => {
     const fetchUserData = async (e) => {
       try {
         const storedUser = JSON.parse(localStorage.getItem("user"));
-        if (!storedUser || !storedUser.token) {
+       /* if (!storedUser || !storedUser.token) {
           throw new Error('No authentication token found');
-        }
-        const token = storedUser.token;
+        }*/
+        //onst token = storedUser.token;
         const response = await axios.get(
-          `http://localhost:8080/api/users/${id}`,
+          `http://localhost:8080/api/users/${storedUser.id}`,
           {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
+           withCredentials: true
           }
         );
         setUser(response.data);

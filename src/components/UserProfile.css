@@ -1,73 +1,41 @@
 .profile-container {
-    margin-top: 20px;
-  }
-  
-  .img-fluid {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }.profile-container {
-    margin-top: 20px;
-  }
-  
-  .img-fluid {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  .rating {
-    font-size: 1.2em;
-    color: #333;
-  }
-  
-  .btn-outline-secondary {
-    border: 1px solid #ccc;
-    color: #333;
-  }
-  
-  .btn-outline-secondary:hover {
-    background-color: #f0f0f0;
-  }
-  
-  hr {
-    margin-top: 20px;
-  }
-  
-  h3 {
-    margin-top: 20px;
-  }
-  
-  
-  .rating {
-    font-size: 1.2em;
-    color: #333;
-  }
-  
-  .btn-outline-secondary {
-    border: 1px solid #ccc;
-    color: #333;
-  }
-  
-  .btn-outline-secondary:hover {
-    background-color: #f0f0f0;
-  }
-  
-  hr {
-    margin-top: 20px;
-  }
-  
-  h3 {
-    margin-top: 20px;
-  }
-  
+  margin: 20px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  background-color: transparent;
+}
+
+.rating {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+.navbar a {
+  margin-right: 10px;
+}
+
+.navbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
