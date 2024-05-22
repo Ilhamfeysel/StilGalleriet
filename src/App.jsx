@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { AuthProvider } from "./context/AuthContext";
 
+import { AuthProvider } from "src/context/Authcontext";
+import UserProfile from "./components/UserProfile";
 import Home from "./components/Home";
 import Header from "./components/Header";
-import HomePageButtons from "./components/HomePageButtons";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -22,6 +22,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sell" element={<Sell />} />
+            <Route path="/profile" element={<UserProfile />} />
           </Routes>
           <Footer />
         </div>
