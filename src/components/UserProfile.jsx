@@ -3,8 +3,8 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 //import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { useParams } from "react-router-dom";
-
+//import { useParams } from "react-router-dom";
+import "/src/UserProfile.css";
 const UserProfile = () => {
   const [user, setUser] = useState(null);
   //const { id } = useParams();
