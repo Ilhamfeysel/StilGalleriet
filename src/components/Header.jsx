@@ -33,8 +33,8 @@ const Header = () => {
             <Link className="link" to="/favorites">
               <li>Favorites</li>
             </Link>
-            <Link className="link" to="/new-ad">
-              <li>New Ad</li>
+            <Link className="link" to="/sell">
+              <li>Sell Now</li>
             </Link>
             <Button variant="outline-secondary" onClick={handleLogout}>
               Log out

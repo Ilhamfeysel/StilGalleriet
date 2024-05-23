@@ -1,7 +1,7 @@
 import { useEffect, useReducer, createContext } from "react";
 
 const initialState = {
-  user: null,
+  user: JSON.parse(window.localStorage.getItem("user")) ||null,
 };
 
 const rootReducer = (state, action) => {

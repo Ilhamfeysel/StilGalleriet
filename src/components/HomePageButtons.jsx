@@ -16,10 +16,10 @@ const HomePageButtons = () => {
        <Col xs="auto"> 
           <Button variant="outline-secondary" onClick={() => handleNavigation("/register")}>Register</Button>{' '}
           <Button variant="outline-secondary" onClick={() => handleNavigation("/login")}>Sign In</Button>{' '}
-          <Button variant="outline-secondary" onClick={() => handleNavigation("/new-ad")}>New Ad</Button>
+        <Button variant="outline-secondary"  onClick={() => handleNavigation("/sell")}>Sell Now</Button>
         </Col>
         <Col style={{ display: "flex", justifyContent: "flex-end", alignItems: "end" }}>
-          <Button variant="outline-secondary" style={{ position: "relative", bottom: "-50px" }} onClick={() => handleNavigation("/sell")}>Sell Now</Button>
+          
         </Col>
       </Row>
     </Container>
@@ -27,6 +27,11 @@ const HomePageButtons = () => {
 };
 
 export default HomePageButtons;
+
+
+
+
+//          <Button variant="outline-secondary" onClick={() => handleNavigation("/new-ad")}>New Ad</Button>
 
 
 
