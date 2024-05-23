@@ -35,6 +35,7 @@ const Home = () => {
         {products.map((product, index) => (
           <div key={index} className="col-sm-4">
             <AdCard
+            id={product.id} // la till denna: Dany
               category={product.category}
               imgUrl={product.imgUrl}
               price={product.price}
