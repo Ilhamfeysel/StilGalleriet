@@ -10,7 +10,9 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductPage from "./components/ProductPage"; //la till denna och path product :id längre ner: Dany
 
+
 import Sell from "./components/Sell";
+import CheckoutPage from "./components/CheckoutPage";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
             <Route path="/sell" element={<Sell />} />
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/checkout/:id" element={<CheckoutPage />} />
 
           </Routes>
           <Footer />

@@ -27,7 +27,7 @@ const ProductPage = () => {
   }, [id]);
 
   const handleBuyNow = () => {
-    navigate(`/pay/${id}`);
+    navigate(`/checkout/${id}`);
   };
 
   return (
