@@ -31,13 +31,15 @@ const Login = () => {
         `${import.meta.env.VITE_API_URL}/auth/signin`,
         {
           username,
-          password,
-        }
-      );
-      dispatch({
-        type: "LOGIN",
-        payload: data,
-      });
+          password
+        },{
+          withCredentials: true
+         })
+        
+    dispatch({
+      type: "LOGIN",
+      payload: data
+    })
 
       window.localStorage.setItem("user", JSON.stringify(data));
       console.log("User logged in");

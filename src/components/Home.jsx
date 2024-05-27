@@ -31,10 +31,17 @@ const Home = () => {
   return (
     <div className="container">
       <HeroImage />
+      <h4
+        className="text-left mb-2"
+        style={{ paddingTop: "25px", paddingLeft: "22px" }}
+      >
+        Recently added
+      </h4>
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-sm-4">
             <AdCard
+            id={product.id} // la till denna: Dany
               category={product.category}
               imgUrl={product.imgUrl}
               price={product.price}

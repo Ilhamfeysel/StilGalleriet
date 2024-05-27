@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom"; //la till denna och link längre ner:Dany
 
 export default function AdCard(props) {
   const cardStyle = {
@@ -29,16 +30,13 @@ export default function AdCard(props) {
     fontSize: "14px",
   };
 
-  const handleImageClick = () => {
-    alert("You clicked the advertisement!");
-  };
-
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm mb-3">
+        <Link to={`/product/${props.id}`}> 
           <div className="card" style={cardStyle}>
-            <div style={imgContainerStyle} onClick={handleImageClick}>
+            <div style={imgContainerStyle}>
               <img src={props.imgUrl} alt="product image" style={imgStyle} />
             </div>
             <ul className="list-group list-group-flush">
@@ -60,6 +58,7 @@ export default function AdCard(props) {
               </li>
             </ul>
           </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ function HeroImage() {
   const containerStyle = {
     position: "relative",
     Width: "1000px",
-    marginTop: "10%",
+    marginTop: "5%",
   };
 
   const imgStyle = {
