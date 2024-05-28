@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 /*
   Can be done:
-  - Solve boolean value issue, not sure if it comes from backend or frontend
+  
   - Better styling, display image
   - Show advertisement title instead of ID, might require change in backend or grab data from advertisement here
   - Pagination
@@ -25,6 +25,7 @@ const Purchases = () => {
         );
 
         setOrders(response.data);
+        //console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -46,7 +47,9 @@ const Purchases = () => {
               <ListGroup.Item>Date: {order.orderDate}</ListGroup.Item>
               <ListGroup.Item>Quantity: {order.quantity}</ListGroup.Item>
               <ListGroup.Item>Price: {order.totalPrice}</ListGroup.Item>
-              <ListGroup.Item>Sold: {`${order.isSold}`}</ListGroup.Item>
+              <ListGroup.Item>
+                Payment: {`${order.sold ? "Complete" : "Ongoing"}`}
+              </ListGroup.Item>
             </ListGroup>
           </div>
         ))}
