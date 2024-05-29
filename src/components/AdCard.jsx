@@ -44,7 +44,7 @@ export default function AdCard(props) {
                 className="list-group-item d-flex justify-content-between"
                 style={listItemStyle}
               >
-                {props.price}
+                {props.price},00 Kr
                 <FontAwesomeIcon
                   icon={faHeart}
                   style={{ cursor: "pointer" }}

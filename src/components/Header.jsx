@@ -23,7 +23,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="title">Stilgalleriet</h1> {/* Stilgalleriet */}
+      <Link to="/" className="title-link">
+        <h1 className="title">Stilgalleriet</h1> {/* Stilgalleriet */}
+      </Link>
       <ul className="menu">
         {isLoggedIn ? (
           <>

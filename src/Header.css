@@ -35,3 +35,11 @@
 .link {
   color: black;
 }
+
+.title-link {
+  text-decoration: none; 
+}
+
+.title-link .title {
+  color: black; 
+}
