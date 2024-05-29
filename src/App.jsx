@@ -9,8 +9,6 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductPage from "./components/ProductPage"; //la till denna och path product :id längre ner: Dany
-
-
 import Sell from "./components/Sell";
 import CheckoutPage from "./components/CheckoutPage";
 

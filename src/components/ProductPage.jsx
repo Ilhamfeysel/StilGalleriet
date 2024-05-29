@@ -47,7 +47,7 @@ const ProductPage = () => {
             <div className="card">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item d-flex justify-content-between product-price">
-                  {product.price}
+                  {product.price},00 kr
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{ cursor: "pointer" }}
