@@ -8,8 +8,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductPage from "./components/ProductPage"; //la till denna och path product :id längre ner: Dany
-
 import Sell from "./components/Sell";
+import CheckoutPage from "./components/CheckoutPage";
 
 import Purchases from "./components/Purchases";
 
@@ -27,6 +27,7 @@ function App() {
             <Route path="/purchases" element={<Purchases />} />
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/checkout/:id" element={<CheckoutPage />} />
           </Routes>
           <Footer />
         </div>

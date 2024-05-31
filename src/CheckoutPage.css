@@ -1,0 +1,82 @@
+
+
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkout-page .order {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.checkout-page .product-image {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.checkout-page .product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-page .form-section {
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+
+.checkout-page .delivery-details, 
+.checkout-page .order-summary {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.checkout-page .adress-form label {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    
+    
+}
+
+.checkout-page .adress-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+.checkout-page button {
+    background-color: #4c544d;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.checkout-page button:hover {
+    background-color: #078199;
+}
+
+
