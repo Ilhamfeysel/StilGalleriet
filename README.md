@@ -69,7 +69,8 @@ If you want to close frontend enter Ctrl^C in terminal and type "y".
 
 ## To do
 - Add buy function
-- Add other unfinsihed features
+- Add other unfinished features
+- Exception handling
 
 ## Project members
 - [Ilhamfeysel](https://github.com/Ilhamfeysel) - Repository owner
